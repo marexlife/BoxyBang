@@ -1,5 +1,9 @@
 #pragma once
 
+namespace BoxyBang
+{
+namespace App
+{
 class App final
 {
   public:
@@ -7,3 +11,5 @@ class App final
 
     void Run();
 };
+} // namespace App
+} // namespace BoxyBang
