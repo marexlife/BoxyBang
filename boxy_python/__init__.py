@@ -18,6 +18,7 @@ class Cloner:
         project_path = f"{self.clone_dir}/{project}"
 
         soft_mkdir(project_path)
+        print(f"project_path is: '{project_path}'")
         run(["git","clone", f"github.com/{maintainer}/{project}.git", "--branch", branch, project_path])
 
 def build():
