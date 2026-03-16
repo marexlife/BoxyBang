@@ -1,11 +1,8 @@
 #pragma once
 
-#include "Token/Token.h"
 #include "Token/TokenStream.h"
-#include <memory>
 #include <string>
 #include <utility>
-#include <vector>
 
 namespace BoxyBang
 {
