@@ -21,6 +21,8 @@ Token::TokenStream Lexer::Lexer::Run()
         }
     }
 
+    this->Flush(tokenStream);
+
     return tokenStream;
 }
 
