@@ -1,7 +1,7 @@
 # Style
 
 Classes: PascalCase
-Functions: PascalCase
+Functions: PascalCase, Traditional syntax
 Variables: camelCase
 Members: m_member
 Constexpr: Constexpr
