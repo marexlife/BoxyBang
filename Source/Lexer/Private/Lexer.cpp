@@ -4,12 +4,11 @@
 
 namespace BoxyBang
 {
-Token::TokenStream Lexer::Lexer::Run(
-    std::string&& sourceText)
+Token::TokenStream Lexer::Lexer::Run()
 {
     Token::TokenStream tokenStream;
 
-    for (const auto currentChar : sourceText)
+    for (const auto currentChar : m_sourceText)
     {
         switch (currentChar)
         {
