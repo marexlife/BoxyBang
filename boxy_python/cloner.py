@@ -14,5 +14,5 @@ class Cloner:
 
         soft_mkdir(project_path)
         print(f"project_path is: '{project_path}'")
-        run(["git","clone", f"github.com/{maintainer}/{project}.git", "--branch", branch, project_path])
+        run(["git","clone", f"https://github.com/{maintainer}/{project}.git", "--branch", branch, project_path])
 

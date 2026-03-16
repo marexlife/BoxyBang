@@ -8,7 +8,8 @@ namespace App
 {
 void App::Run()
 {
-    Lexer::Lexer().Run(std::string(""));
+    const auto result =
+        Lexer::Lexer().Run(std::string(""));
 }
 } // namespace App
 } // namespace BoxyBang
