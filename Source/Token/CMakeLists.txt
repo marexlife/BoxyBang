@@ -9,6 +9,7 @@ add_library(${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME} PRIVATE
     Private/TokenFactorySingleton.cpp
+    Private/TokenStream.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC

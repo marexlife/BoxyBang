@@ -17,6 +17,11 @@ class [[nodiscard]] Lexer final
 
     [[nodiscard]] Token::TokenStream Run(
         std::string&& sourceText);
+
+  private:
+    void Flush(Token::TokenStream& tokenStream);
+
+    std::string m_lastWord;
 };
 } // namespace Lexer
 } // namespace BoxyBang
