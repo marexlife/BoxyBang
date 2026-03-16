@@ -6,7 +6,7 @@
 
 std::unique_ptr<BoxyBang::Token::Token> BoxyBang::
     Token::TokenFactorySingleton::NewToken(
-        const std::string_view name)
+        const std::string_view name) noexcept
 {
     // const std::optional<std::int32_t> i =
     // std::nullopt; std::from_chars(name.cbegin(),

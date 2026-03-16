@@ -13,19 +13,22 @@ template <typename T>
 class ValueToken
 {
   public:
-    explicit ValueToken(T&& value)
+    explicit ValueToken(T&& value) noexcept
         : m_value(std::move(value))
     {
     }
 
-    ValueToken& operator=(const ValueToken&) = default;
-    ValueToken& operator=(ValueToken&&) = default;
-    ValueToken(const ValueToken&) = default;
-    ValueToken(ValueToken&&) = default;
-    virtual ~ValueToken() = default;
+    ValueToken& operator=(const ValueToken&) noexcept =
+        delete;
+    ValueToken& operator=(ValueToken&&) noexcept =
+        delete;
+    ValueToken(const ValueToken&) noexcept = delete;
+    ValueToken(ValueToken&&) noexcept = delete;
+    virtual ~ValueToken() noexcept = default;
 
   protected:
-    [[nodiscard]] inline const T& GetValue() const
+    [[nodiscard]] inline const T& GetValue()
+        const noexcept
     {
         return m_value;
     }

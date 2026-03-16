@@ -9,11 +9,12 @@ namespace App
 class [[nodiscard]] App final
 {
   public:
-    App() = default;
+    App() noexcept = default;
 
-    void Run();
+    void Run() noexcept;
 
-    [[nodiscard]] static std::string_view GetTestCode()
+    [[nodiscard]] static consteval std::string_view
+    GetTestCode() noexcept
     {
         return R"(
 

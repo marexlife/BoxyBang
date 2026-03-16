@@ -8,7 +8,7 @@ namespace BoxyBang
 {
 namespace App
 {
-void App::Run()
+void App::Run() noexcept
 {
     std::string sourceText(App::GetTestCode());
 

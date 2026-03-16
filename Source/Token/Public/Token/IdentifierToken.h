@@ -13,7 +13,8 @@ class IdentifierToken final
       public BoxyBang::Token::ValueToken<std::string>
 {
   public:
-    explicit IdentifierToken(std::string&& value)
+    explicit IdentifierToken(
+        std::string&& value) noexcept
         : ValueToken(std::move(value))
     {
     }

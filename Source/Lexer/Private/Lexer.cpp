@@ -5,7 +5,7 @@
 
 namespace BoxyBang
 {
-Token::TokenStream Lexer::Lexer::Run()
+Token::TokenStream Lexer::Lexer::Run() noexcept
 {
     Token::TokenStream tokenStream;
 
@@ -33,7 +33,7 @@ Token::TokenStream Lexer::Lexer::Run()
 }
 
 void Lexer::Lexer::Flush(
-    Token::TokenStream& tokenStream)
+    Token::TokenStream& tokenStream) noexcept
 {
     tokenStream.CreateAndPush(m_lastWord);
     m_lastWord.clear();

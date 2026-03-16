@@ -12,7 +12,7 @@ namespace Token
 class [[nodiscard]] TokenStream final
 {
   public:
-    void CreateAndPush(std::string_view name);
+    void CreateAndPush(std::string_view name) noexcept;
 
   private:
     std::vector<

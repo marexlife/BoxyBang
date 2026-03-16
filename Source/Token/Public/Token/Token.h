@@ -7,12 +7,12 @@ namespace Token
 class [[nodiscard]] Token
 {
   public:
-    explicit Token() = default;
-    Token& operator=(Token&&) = default;
-    Token& operator=(const Token&) = default;
-    Token(Token&&) = default;
-    Token(const Token&) = default;
-    virtual ~Token() = default;
+    explicit Token() noexcept = default;
+    Token& operator=(Token&&) noexcept = delete;
+    Token& operator=(const Token&) noexcept = delete;
+    Token(Token&&) noexcept = delete;
+    Token(const Token&) noexcept = delete;
+    virtual ~Token() noexcept = default;
 };
 } // namespace Token
 } // namespace BoxyBang

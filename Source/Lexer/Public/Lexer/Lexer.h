@@ -11,15 +11,16 @@ namespace Lexer
 class [[nodiscard]] Lexer final
 {
   public:
-    explicit Lexer(std::string&& sourceText)
+    explicit Lexer(std::string&& sourceText) noexcept
         : m_sourceText(std::move(sourceText))
     {
     }
 
-    [[nodiscard]] Token::TokenStream Run();
+    [[nodiscard]] Token::TokenStream Run() noexcept;
 
   private:
-    void Flush(Token::TokenStream& tokenStream);
+    void Flush(
+        Token::TokenStream& tokenStream) noexcept;
 
     std::string m_sourceText;
     std::string m_lastWord;
