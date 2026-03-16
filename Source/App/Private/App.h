@@ -4,7 +4,7 @@ namespace BoxyBang
 {
 namespace App
 {
-class App final
+class [[nodiscard]] App final
 {
   public:
     App() = default;

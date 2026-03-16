@@ -6,7 +6,7 @@ namespace BoxyBang
 {
 namespace Token
 {
-class Op : public Token
+class [[nodiscard]] Op : public Token
 {
   public:
 };

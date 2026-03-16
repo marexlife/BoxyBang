@@ -4,7 +4,7 @@ namespace BoxyBang
 {
 namespace Token
 {
-class Token
+class [[nodiscard]] Token
 {
   public:
     Token& operator=(Token&&) = default;

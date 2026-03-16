@@ -10,7 +10,7 @@ namespace BoxyBang
 {
 namespace Token
 {
-class TokenStream final
+class [[nodiscard]] TokenStream final
 {
   public:
     void CreateAndPush(std::string_view name)

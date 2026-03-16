@@ -5,7 +5,7 @@ namespace BoxyBang
 {
 namespace Lexer
 {
-class Lexer final
+class [[nodiscard]] Lexer final
 {
   public:
     explicit Lexer() = default;
