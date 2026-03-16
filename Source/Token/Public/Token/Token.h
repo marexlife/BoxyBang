@@ -7,6 +7,7 @@ namespace Token
 class [[nodiscard]] Token
 {
   public:
+    explicit Token() = default;
     Token& operator=(Token&&) = default;
     Token& operator=(const Token&) = default;
     Token(Token&&) = default;

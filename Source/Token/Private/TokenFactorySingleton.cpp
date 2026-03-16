@@ -1,7 +1,8 @@
 #include "Token/TokenFactorySingleton.h"
+#include "Token/OperatorToken.h"
 #include "Token/Token.h"
-#include <charconv>
 #include <cstdint>
+#include <memory>
 #include <optional>
 
 std::unique_ptr<BoxyBang::Token::Token> BoxyBang::
@@ -9,5 +10,8 @@ std::unique_ptr<BoxyBang::Token::Token> BoxyBang::
         std::string_view name)
 {
     std::optional<std::int32_t> i = std::nullopt;
-    std::from_chars(name.cbegin(), name.cend(), i);
+    // std::from_chars(name.cbegin(), name.cend(), i);
+
+    return std::make_unique<
+        BoxyBang::Token::OperatorToken>();
 }
