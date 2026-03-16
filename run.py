@@ -1,4 +1,5 @@
-from boxy_python import Cloner, build
+from boxy_python.cloner import Cloner
+from boxy_python import build
 
 
 def main():

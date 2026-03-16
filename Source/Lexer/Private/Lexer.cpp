@@ -1,9 +1,6 @@
 #include "Lexer/Lexer.h"
-#include "Token/Token.h"
 #include "Token/TokenStream.h"
-#include <memory>
 #include <string>
-#include <vector>
 
 namespace BoxyBang
 {
