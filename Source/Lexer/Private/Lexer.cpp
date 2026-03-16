@@ -8,6 +8,8 @@ Token::TokenStream Lexer::Lexer::Run()
 {
     Token::TokenStream tokenStream;
 
+    // BoxyBang::Utils::TDefer flushAtEnd([]() {});
+
     for (const auto currentChar : m_sourceText)
     {
         switch (currentChar)
