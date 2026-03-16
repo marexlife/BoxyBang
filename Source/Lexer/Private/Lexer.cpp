@@ -1,5 +1,6 @@
 #include "Lexer/Lexer.h"
 #include "Token/TokenStream.h"
+#include "Utils/Defer.h"
 #include <string>
 
 namespace BoxyBang
@@ -8,7 +9,9 @@ Token::TokenStream Lexer::Lexer::Run()
 {
     Token::TokenStream tokenStream;
 
-    // BoxyBang::Utils::TDefer flushAtEnd([]() {});
+    BoxyBang::Utils::TDefer flushAtEnd([] {
+
+    });
 
     for (const auto currentChar : m_sourceText)
     {
