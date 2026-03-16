@@ -13,10 +13,7 @@ namespace Token
 class [[nodiscard]] TokenStream final
 {
   public:
-    void CreateAndPush(std::string_view name)
-    {
-        m_tokens.emplace_back(TokenFactorySingleton::NewToken(name));
-    }
+    void CreateAndPush(std::string_view name);
 
   private:
     std::vector<std::unique_ptr<Token>> m_tokens;
