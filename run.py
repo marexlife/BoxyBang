@@ -1,5 +1,9 @@
-from subprocess import run
+from boxy_python import Cloner, build
 
-run(["cmake", ".", "-B", "build"])
-run(["cmake", "--build", "build"])
-run(["./build/Source/App/BoxyBang"])
+
+def main():
+    cloner: Cloner = Cloner("ThirdParty")
+    cloner.clone("likle", "cargs", "stable")
+    build()
+
+main()
