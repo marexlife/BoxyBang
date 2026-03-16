@@ -1,7 +1,6 @@
 #pragma once
 
 #include <tuple>
-#include <type_traits>
 #include <utility>
 
 namespace BoxyBang
@@ -9,9 +8,6 @@ namespace BoxyBang
 namespace Utils
 {
 template <typename F, typename... Args>
-    requires std::is_default_constructible_v<F> &&
-             std::is_move_constructible_v<F> &&
-             std::is_constructible_v<F, Args...>
 class TDefer final
 {
   public:
@@ -30,10 +26,11 @@ class TDefer final
     }
 
   private:
-    F m_functor{};
+    F m_functor;
     std::tuple<Args...> m_args{};
 };
 
-template <typename F> TDefer(F) -> TDefer<F>;
+template <typename F, typename... Args>
+TDefer(F, Args...) -> TDefer<F, Args...>;
 } // namespace Utils
 } // namespace BoxyBang

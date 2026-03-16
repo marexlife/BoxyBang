@@ -9,9 +9,12 @@ Token::TokenStream Lexer::Lexer::Run()
 {
     Token::TokenStream tokenStream;
 
-    BoxyBang::Utils::TDefer flushAtEnd([] {
-
-    });
+    BoxyBang::Utils::TDefer flushAtEnd(
+        [](BoxyBang::Lexer::Lexer* const self,
+           Token::TokenStream& tokenStream) {
+            self->Flush(tokenStream);
+        },
+        this, &tokenStream);
 
     for (const auto currentChar : m_sourceText)
     {
@@ -25,8 +28,6 @@ Token::TokenStream Lexer::Lexer::Run()
             break;
         }
     }
-
-    this->Flush(tokenStream);
 
     return tokenStream;
 }
