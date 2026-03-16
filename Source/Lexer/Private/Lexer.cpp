@@ -5,13 +5,15 @@
 
 namespace BoxyBang
 {
-Token::TokenStream Lexer::Lexer::Run() noexcept
+namespace Lexer
+{
+Token::TokenStream Lexer::Run()
 {
     Token::TokenStream tokenStream;
 
-    BoxyBang::Utils::TDefer flushAtEnd(
+    Utils::TDefer flushAtEnd(
         [](BoxyBang::Lexer::Lexer* const self,
-           Token::TokenStream& tokenStream) {
+           Token::TokenStream& tokenStream) -> void {
             self->Flush(tokenStream);
         },
         this, &tokenStream);
@@ -33,9 +35,10 @@ Token::TokenStream Lexer::Lexer::Run() noexcept
 }
 
 void Lexer::Lexer::Flush(
-    Token::TokenStream& tokenStream) noexcept
+    Token::TokenStream& tokenStream)
 {
     tokenStream.CreateAndPush(m_lastWord);
     m_lastWord.clear();
 }
+} // namespace Lexer
 } // namespace BoxyBang

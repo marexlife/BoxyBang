@@ -16,11 +16,10 @@ class [[nodiscard]] Lexer final
     {
     }
 
-    [[nodiscard]] Token::TokenStream Run() noexcept;
+    [[nodiscard]] Token::TokenStream Run();
 
   private:
-    void Flush(
-        Token::TokenStream& tokenStream) noexcept;
+    void Flush(Token::TokenStream& tokenStream);
 
     std::string m_sourceText;
     std::string m_lastWord;
