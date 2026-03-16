@@ -15,7 +15,9 @@ class [[nodiscard]] TokenStream final
     void CreateAndPush(std::string_view name);
 
   private:
-    std::vector<std::unique_ptr<Token>> m_tokens;
+    std::vector<
+        std::unique_ptr<BoxyBang::Token::Token>>
+        m_tokens;
 };
 } // namespace Token
 } // namespace BoxyBang
