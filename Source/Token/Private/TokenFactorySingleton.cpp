@@ -1,9 +1,7 @@
 #include "Token/TokenFactorySingleton.h"
 #include "Token/IdentifierToken.h"
 #include "Token/Token.h"
-#include <cstdint>
 #include <memory>
-#include <optional>
 #include <string>
 
 std::unique_ptr<BoxyBang::Token::Token> BoxyBang::

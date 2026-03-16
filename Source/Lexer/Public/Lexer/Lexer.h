@@ -1,6 +1,10 @@
 #pragma once
 
+#include "Token/Token.h"
+#include "Token/TokenStream.h"
+#include <memory>
 #include <string>
+#include <vector>
 
 namespace BoxyBang
 {
@@ -11,7 +15,8 @@ class [[nodiscard]] Lexer final
   public:
     explicit Lexer() = default;
 
-    void Run(std::string&& sourceText);
+    [[nodiscard]] Token::TokenStream Run(
+        std::string&& sourceText);
 };
 } // namespace Lexer
 } // namespace BoxyBang
