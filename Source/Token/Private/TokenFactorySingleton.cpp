@@ -1,4 +1,5 @@
 #include "Token/TokenFactorySingleton.h"
+#include "Token/IdentifierToken.h"
 #include "Token/OperatorToken.h"
 #include "Token/Token.h"
 #include <cstdint>
@@ -13,5 +14,5 @@ std::unique_ptr<BoxyBang::Token::Token> BoxyBang::
     // std::from_chars(name.cbegin(), name.cend(), i);
 
     return std::make_unique<
-        BoxyBang::Token::OperatorToken>();
+        BoxyBang::Token::IdentifierToken>();
 }
