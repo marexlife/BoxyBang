@@ -1,5 +1,5 @@
 #include "App.h"
-#include <iostream>
+#include "Lexer/Lexer.h"
 
 namespace BoxyBang
 {
@@ -7,7 +7,7 @@ namespace App
 {
 void App::Run()
 {
-    std::operator<<(std::cout, "Hello!");
+    Lexer::Lexer();
 }
 } // namespace App
 } // namespace BoxyBang

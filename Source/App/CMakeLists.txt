@@ -11,3 +11,8 @@ target_sources(${PROJECT_NAME} PRIVATE
     Private/main.cpp
     Private/App.cpp
 )
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    Lexer
+    Token
+)
