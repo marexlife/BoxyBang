@@ -2,5 +2,5 @@
 
 int main()
 {
-    App().Run();
+    BoxyBang::App::App().Run();
 }
