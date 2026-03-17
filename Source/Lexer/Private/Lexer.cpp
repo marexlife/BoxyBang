@@ -1,5 +1,5 @@
-#include "BoxyBang/Lexer/Lexer.h"
-#include "BoxyBang/Token/TokenStream.h"
+#include <BoxyBang/Lexer/Lexer.h>
+#include <BoxyBang/Token/TokenStream.h>
 #include <bits/std_thread.h>
 #include <exception>
 #include <iostream>

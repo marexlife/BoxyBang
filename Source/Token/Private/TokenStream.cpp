@@ -1,5 +1,5 @@
-#include "BoxyBang/Token/TokenStream.h"
-#include "BoxyBang/Token/TokenFactorySingleton.h"
+#include <BoxyBang/Token/TokenFactorySingleton.h>
+#include <BoxyBang/Token/TokenStream.h>
 
 void BoxyBang::Token::CTokenStream::CreateAndPush(
     std::string_view name)
