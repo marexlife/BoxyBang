@@ -9,14 +9,14 @@ namespace BoxyBang
 {
 namespace Token
 {
-class [[nodiscard]] TokenStream final
+class [[nodiscard]] CTokenStream final
 {
   public:
     void CreateAndPush(std::string_view name);
 
   private:
     std::vector<
-        std::unique_ptr<BoxyBang::Token::Token>>
+        std::unique_ptr<BoxyBang::Token::CToken>>
         m_tokens;
 };
 } // namespace Token

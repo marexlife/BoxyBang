@@ -7,7 +7,7 @@ namespace BoxyBang
 namespace Token
 {
 class [[nodiscard]] OperatorToken
-    : public BoxyBang::Token::Token
+    : public BoxyBang::Token::CToken
 {
   public:
     explicit OperatorToken() noexcept = default;

@@ -6,25 +6,14 @@ namespace BoxyBang
 {
 namespace App
 {
-class [[nodiscard]] App final
+class [[nodiscard]] CApp final
 {
   public:
-    App() noexcept = default;
+    CApp() noexcept = default;
 
     void Run() noexcept;
 
-    [[nodiscard]] static consteval std::string_view
-    GetTestCode() noexcept
-    {
-        return R"(
-
-function main(): void {
-    console.log('Hello World!')
-}
-
-main()
-)";
-    }
+    void TryRun();
 };
 } // namespace App
 } // namespace BoxyBang

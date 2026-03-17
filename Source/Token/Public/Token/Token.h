@@ -4,15 +4,15 @@ namespace BoxyBang
 {
 namespace Token
 {
-class [[nodiscard]] Token
+class [[nodiscard]] CToken
 {
   public:
-    explicit Token() noexcept = default;
-    Token& operator=(Token&&) noexcept = delete;
-    Token& operator=(const Token&) noexcept = delete;
-    Token(Token&&) noexcept = delete;
-    Token(const Token&) noexcept = delete;
-    virtual ~Token() noexcept = default;
+    explicit CToken() noexcept = default;
+    CToken& operator=(CToken&&) noexcept = delete;
+    CToken& operator=(const CToken&) noexcept = delete;
+    CToken(CToken&&) noexcept = delete;
+    CToken(const CToken&) noexcept = delete;
+    virtual ~CToken() noexcept = default;
 };
 } // namespace Token
 } // namespace BoxyBang

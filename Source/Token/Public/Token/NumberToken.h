@@ -8,13 +8,14 @@ namespace BoxyBang
 {
 namespace Token
 {
-class [[nodiscard]] NumberToken final
+class [[nodiscard]] CNumberToken final
     : public BoxyBang::Token::OperatorToken,
-      public BoxyBang::Token::ValueToken<std::double_t>
+      public BoxyBang::Token::CValueToken<
+          std::double_t>
 {
   public:
-    explicit NumberToken(std::double_t value) noexcept
-        : ValueToken(std::move(value))
+    explicit CNumberToken(std::double_t value) noexcept
+        : CValueToken(std::move(value))
     {
     }
 };

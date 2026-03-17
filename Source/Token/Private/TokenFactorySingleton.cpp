@@ -4,8 +4,8 @@
 #include <memory>
 #include <string>
 
-std::unique_ptr<BoxyBang::Token::Token> BoxyBang::
-    Token::TokenFactorySingleton::NewToken(
+std::unique_ptr<BoxyBang::Token::CToken> BoxyBang::
+    Token::CTokenFactorySingleton::NewToken(
         const std::string_view name) noexcept
 {
     // const std::optional<std::int32_t> i =
@@ -13,6 +13,6 @@ std::unique_ptr<BoxyBang::Token::Token> BoxyBang::
     // name.cend(), i);
 
     return std::make_unique<
-        BoxyBang::Token::IdentifierToken>(
+        BoxyBang::Token::CIdentifierToken>(
         std::string(name));
 }

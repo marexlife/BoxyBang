@@ -8,14 +8,14 @@ namespace BoxyBang
 {
 namespace Token
 {
-class IdentifierToken final
-    : public BoxyBang::Token::Token,
-      public BoxyBang::Token::ValueToken<std::string>
+class CIdentifierToken final
+    : public BoxyBang::Token::CToken,
+      public BoxyBang::Token::CValueToken<std::string>
 {
   public:
-    explicit IdentifierToken(
+    explicit CIdentifierToken(
         std::string&& value) noexcept
-        : ValueToken(std::move(value))
+        : CValueToken(std::move(value))
     {
     }
 };

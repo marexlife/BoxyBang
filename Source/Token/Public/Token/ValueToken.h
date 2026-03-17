@@ -10,30 +10,31 @@ namespace Token
 template <typename T>
     requires std::is_move_constructible_v<T> &&
              std::is_default_constructible_v<T>
-class ValueToken
+class CValueToken
 {
   public:
-    explicit ValueToken(T&& value) noexcept(
+    explicit CValueToken(T&& value) noexcept(
         std::is_nothrow_constructible_v<T>)
         : m_value(std::move(value))
     {
     }
 
-    ValueToken& operator=(const ValueToken&) noexcept(
+    CValueToken&
+    operator=(const CValueToken&) noexcept(
         std::is_nothrow_copy_assignable_v<T>) = delete;
 
-    ValueToken& operator=(ValueToken&&) noexcept(
+    CValueToken& operator=(CValueToken&&) noexcept(
         std::is_nothrow_move_assignable_v<T>) = delete;
 
-    ValueToken(const ValueToken&) noexcept(
+    CValueToken(const CValueToken&) noexcept(
         std::is_nothrow_copy_constructible_v<T>) =
         delete;
 
-    ValueToken(ValueToken&&) noexcept(
+    CValueToken(CValueToken&&) noexcept(
         std::is_nothrow_move_constructible_v<T>) =
         delete;
 
-    virtual ~ValueToken() noexcept(
+    virtual ~CValueToken() noexcept(
         std::is_nothrow_destructible_v<T>) = default;
 
   protected:

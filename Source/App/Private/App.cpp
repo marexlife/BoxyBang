@@ -1,5 +1,6 @@
 #include "App.h"
 #include "Lexer/Lexer.h"
+#include "TestCaseMachineSingleton.h"
 #include <iostream>
 #include <string>
 #include <utility>
@@ -8,16 +9,29 @@ namespace BoxyBang
 {
 namespace App
 {
-void App::Run() noexcept
+void CApp::Run() noexcept
 {
-    std::string sourceText(App::GetTestCode());
+    try
+    {
+        this->TryRun();
+    }
+    catch (const std::exception& e)
+    {
+        std::operator<<(
+            std::operator<<(
+                std::cout,
+                "App failed to execute with error: "),
+            e.what());
+    }
+}
 
-    std::operator<<(
-        std::operator<<(std::cout, "sourceText:"),
-        sourceText);
+void CApp::TryRun()
+{
+    std::string sourceText(
+        TestCaseMachineSingleton::GetTestCode());
 
     const auto result =
-        Lexer::Lexer(std::move(sourceText)).Run();
+        Lexer::CLexer(std::move(sourceText)).Run();
 }
 } // namespace App
 } // namespace BoxyBang

@@ -8,11 +8,11 @@ namespace BoxyBang
 {
 namespace Token
 {
-class TokenFactorySingleton final
+class CTokenFactorySingleton final
 {
   public:
     [[nodiscard]] static std::unique_ptr<
-        BoxyBang::Token::Token>
+        BoxyBang::Token::CToken>
     NewToken(std::string_view name) noexcept;
 };
 } // namespace Token

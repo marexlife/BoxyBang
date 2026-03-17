@@ -1,10 +1,6 @@
-from boxy_python.cloner import Cloner
-from boxy_python import build
-
+from boxy_python.utils import build
 
 def main():
-    cloner: Cloner = Cloner("ThirdParty")
-    cloner.clone("likle", "cargs", "stable")
     build()
 
 main()
