@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Token/Token.h"
-#include "Token/ValueToken.h"
+#include "BoxyBang/Token/Token.h"
+#include "BoxyBang/Token/ValueToken.h"
 #include <string>
 
 namespace BoxyBang

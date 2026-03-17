@@ -1,5 +1,5 @@
 #include "App.h"
-#include "Lexer/Lexer.h"
+#include "BoxyBang/Lexer/Lexer.h"
 #include "TestCaseMachineSingleton.h"
 #include <iostream>
 #include <string>

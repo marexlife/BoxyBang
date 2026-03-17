@@ -1,6 +1,6 @@
-#include "Token/TokenFactorySingleton.h"
-#include "Token/IdentifierToken.h"
-#include "Token/Token.h"
+#include "BoxyBang/Token/TokenFactorySingleton.h"
+#include "BoxyBang/Token/IdentifierToken.h"
+#include "BoxyBang/Token/Token.h"
 #include <memory>
 #include <string>
 
