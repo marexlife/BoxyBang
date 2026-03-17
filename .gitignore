@@ -1,4 +1,4 @@
 /.cache
 /build
-/boxy_python/__pycache__
 /ThirdParty
+__pycache__

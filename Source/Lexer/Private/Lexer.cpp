@@ -1,6 +1,5 @@
 #include "Lexer/Lexer.h"
 #include "Token/TokenStream.h"
-#include "Utils/Defer.h"
 #include <bits/std_thread.h>
 #include <exception>
 #include <iostream>
@@ -35,13 +34,6 @@ Token::CTokenStream CLexer::TryRun()
 {
     Token::CTokenStream tokenStream;
 
-    Utils::TDefer flushAtEnd(
-        [](BoxyBang::Lexer::CLexer* const self,
-           Token::CTokenStream& tokenStream) -> void {
-            self->TryFlush(tokenStream);
-        },
-        this, &tokenStream);
-
     for (const auto currentChar : m_sourceText)
     {
         switch (currentChar)
@@ -54,6 +46,8 @@ Token::CTokenStream CLexer::TryRun()
             break;
         }
     }
+
+    this->TryFlush(tokenStream);
 
     return tokenStream;
 }
