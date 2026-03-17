@@ -1,7 +1,6 @@
 #pragma once
 
-#include "BoxyBang/Token/Token.h"
-#include "BoxyBang/Token/ValueToken.h"
+#include <BoxyBang/Token/ValueToken/ValueToken.h>
 #include <string>
 
 namespace BoxyBang
@@ -9,8 +8,7 @@ namespace BoxyBang
 namespace Token
 {
 class CIdentifierToken final
-    : public BoxyBang::Token::CToken,
-      public BoxyBang::Token::CValueToken<std::string>
+    : public Token::CValueToken<std::string>
 {
   public:
     explicit CIdentifierToken(

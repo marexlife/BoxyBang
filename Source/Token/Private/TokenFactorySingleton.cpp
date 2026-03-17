@@ -4,15 +4,20 @@
 #include <memory>
 #include <string>
 
-std::unique_ptr<BoxyBang::Token::CToken> BoxyBang::
-    Token::CTokenFactorySingleton::NewToken(
+namespace BoxyBang
+{
+namespace Token
+{
+std::unique_ptr<Token::CToken> Token::
+    CTokenFactorySingleton::NewToken(
         const std::string_view name) noexcept
 {
     // const std::optional<std::int32_t> i =
     // std::nullopt; std::from_chars(name.cbegin(),
     // name.cend(), i);
 
-    return std::make_unique<
-        BoxyBang::Token::CIdentifierToken>(
+    return std::make_unique<Token::CIdentifierToken>(
         std::string(name));
 }
+} // namespace Token
+} // namespace BoxyBang

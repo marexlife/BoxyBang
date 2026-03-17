@@ -6,11 +6,11 @@ namespace BoxyBang
 {
 namespace Token
 {
-class [[nodiscard]] OperatorToken
-    : public BoxyBang::Token::CToken
+class [[nodiscard]] COperatorToken
+    : public Token::CToken
 {
   public:
-    explicit OperatorToken() noexcept = default;
+    explicit COperatorToken() noexcept = default;
 };
 } // namespace Token
 } // namespace BoxyBang
