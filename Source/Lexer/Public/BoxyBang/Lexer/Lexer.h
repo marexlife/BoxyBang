@@ -19,9 +19,8 @@ class [[nodiscard]] CLexer final
     [[nodiscard]] Token::CTokenStream Run();
 
   private:
-    [[nodiscard]] Token::CTokenStream TryRun();
-    void Flush(Token::CTokenStream& tokenStream);
-    void TryFlush(Token::CTokenStream& tokenStream);
+    void Flush(
+        BoxyBang::Token::CTokenStream& TokenStream);
 
     std::string SourceText;
     std::string LastWord;
