@@ -4,10 +4,10 @@ namespace BoxyBang
 {
 namespace App
 {
-class [[nodiscard]] App final
+class [[nodiscard]] CApp final
 {
   public:
-    App() = default;
+    CApp() = default;
 
     void Run();
 };

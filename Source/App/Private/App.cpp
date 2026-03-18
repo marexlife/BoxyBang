@@ -7,7 +7,7 @@ namespace BoxyBang
 {
 namespace App
 {
-void App::Run()
+void CApp::Run()
 {
     std::string SourceText("");
 
