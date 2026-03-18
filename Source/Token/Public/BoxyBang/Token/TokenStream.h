@@ -17,7 +17,7 @@ class [[nodiscard]] CTokenStream final
   private:
     std::vector<
         std::unique_ptr<BoxyBang::Token::CToken>>
-        m_tokens;
+        Tokens;
 };
 } // namespace Token
 } // namespace BoxyBang

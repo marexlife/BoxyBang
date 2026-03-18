@@ -10,7 +10,7 @@ class [[nodiscard]] COperatorToken
     : public Token::CToken
 {
   public:
-    explicit COperatorToken() noexcept = default;
+    explicit COperatorToken() = default;
 };
 } // namespace Token
 } // namespace BoxyBang

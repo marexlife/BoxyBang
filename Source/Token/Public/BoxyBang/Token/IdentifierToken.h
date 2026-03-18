@@ -8,12 +8,12 @@ namespace BoxyBang
 namespace Token
 {
 class CIdentifierToken final
-    : public Token::CValueToken<std::string>
+    : public BoxyBang::Token::CValueToken<std::string>
 {
   public:
     explicit CIdentifierToken(
-        std::string&& value) noexcept
-        : CValueToken(std::move(value))
+        std::string&& Value) noexcept
+        : CValueToken(std::move(Value))
     {
     }
 };

@@ -4,14 +4,12 @@ namespace BoxyBang
 {
 namespace App
 {
-class [[nodiscard]] CApp final
+class [[nodiscard]] App final
 {
   public:
-    CApp() noexcept = default;
+    App() = default;
 
-    void Run() noexcept;
-
-    void TryRun();
+    void Run();
 };
 } // namespace App
 } // namespace BoxyBang

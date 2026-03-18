@@ -8,11 +8,11 @@ namespace BoxyBang
 {
 namespace Lexer
 {
-class [[nodiscard]] CLexer final
+class [[nodiscard]] Lexer final
 {
   public:
-    explicit CLexer(std::string&& sourceText) noexcept
-        : m_sourceText(std::move(sourceText))
+    explicit Lexer(std::string&& sourceText) noexcept
+        : SourceText(std::move(sourceText))
     {
     }
 
@@ -24,8 +24,8 @@ class [[nodiscard]] CLexer final
         Token::CTokenStream& tokenStream) noexcept;
     void TryFlush(Token::CTokenStream& tokenStream);
 
-    std::string m_sourceText;
-    std::string m_lastWord;
+    std::string SourceText;
+    std::string LastWord;
 };
 } // namespace Lexer
 } // namespace BoxyBang

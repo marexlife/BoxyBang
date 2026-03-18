@@ -9,7 +9,7 @@ namespace BoxyBang
 {
 namespace Lexer
 {
-Token::CTokenStream CLexer::Run() noexcept
+Token::CTokenStream Lexer::Run() noexcept
 {
     while (true)
     {
@@ -30,7 +30,7 @@ Token::CTokenStream CLexer::Run() noexcept
     }
 }
 
-Token::CTokenStream CLexer::TryRun()
+Token::CTokenStream Lexer::TryRun()
 {
     Token::CTokenStream tokenStream;
 
@@ -51,7 +51,7 @@ Token::CTokenStream CLexer::TryRun()
 
     return tokenStream;
 }
-void CLexer::Flush(
+void Lexer::Flush(
     Token::CTokenStream& tokenStream) noexcept
 {
     while (true)
@@ -74,7 +74,7 @@ void CLexer::Flush(
     }
 }
 
-void CLexer::TryFlush(Token::CTokenStream& tokenStream)
+void Lexer::TryFlush(Token::CTokenStream& tokenStream)
 {
     tokenStream.CreateAndPush(m_lastWord);
     m_lastWord.clear();

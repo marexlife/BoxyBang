@@ -8,16 +8,12 @@ namespace BoxyBang
 {
 namespace Token
 {
-std::unique_ptr<Token::CToken> Token::
+std::unique_ptr<BoxyBang::Token::CToken> Token::
     CTokenFactorySingleton::NewToken(
-        const std::string_view name) noexcept
+        const std::string_view Name)
 {
-    // const std::optional<std::int32_t> i =
-    // std::nullopt; std::from_chars(name.cbegin(),
-    // name.cend(), i);
-
     return std::make_unique<Token::CIdentifierToken>(
-        std::string(name));
+        std::string(Name));
 }
 } // namespace Token
 } // namespace BoxyBang

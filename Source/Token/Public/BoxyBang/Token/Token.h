@@ -7,13 +7,13 @@ namespace Token
 class [[nodiscard]] CToken
 {
   public:
-    explicit CToken() noexcept = default;
-    virtual ~CToken() noexcept = default;
+    explicit CToken() = default;
+    virtual ~CToken() = default;
 
-    CToken& operator=(CToken&&) noexcept = delete;
-    CToken& operator=(const CToken&) noexcept = delete;
-    CToken(CToken&&) noexcept = delete;
-    CToken(const CToken&) noexcept = delete;
+    CToken& operator=(CToken&&) = delete;
+    CToken& operator=(const CToken&) = delete;
+    CToken(CToken&&) = delete;
+    CToken(const CToken&) = delete;
 };
 } // namespace Token
 } // namespace BoxyBang

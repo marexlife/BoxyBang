@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Exceptions/ValueTokenNoValueException.h"
 #include <BoxyBang/Token/Token.h>
 #include <optional>
 #include <type_traits>
@@ -14,50 +13,33 @@ namespace Token
 template <typename T>
     requires std::is_move_constructible_v<T> &&
              std::is_default_constructible_v<T>
-class CValueToken : public Token::CToken
+class CValueToken : public BoxyBang::Token::CToken
 {
   public:
-    explicit CValueToken(T&& value) noexcept(
-        std::is_nothrow_constructible_v<T>)
-        : m_value(std::move(value))
+    explicit CValueToken(T&& Value)
+        : Value(std::move(Value))
     {
     }
 
-    CValueToken&
-    operator=(const CValueToken&) noexcept(
-        std::is_nothrow_copy_assignable_v<T>) = delete;
-
-    CValueToken& operator=(CValueToken&&) noexcept(
-        std::is_nothrow_move_assignable_v<T>) = delete;
-
-    CValueToken(const CValueToken&) noexcept(
-        std::is_nothrow_copy_constructible_v<T>) =
+    CValueToken& operator=(const CValueToken&) =
         delete;
 
-    CValueToken(CValueToken&&) noexcept(
-        std::is_nothrow_move_constructible_v<T>) =
-        delete;
+    CValueToken& operator=(CValueToken&&) = delete;
 
-    ~CValueToken() noexcept(
-        std::is_nothrow_destructible_v<T>) override =
-        default;
+    CValueToken(const CValueToken&) = delete;
+
+    CValueToken(CValueToken&&) = delete;
+
+    ~CValueToken() override = default;
 
   protected:
-    [[nodiscard]] inline const T& GetValue()
-        const noexcept
+    [[nodiscard]] const T& GetValue() const
     {
-        if (m_value.has_value())
-        {
-            return m_value;
-        }
-        else
-        {
-            throw Token::CValueTokenNoValueException();
-        }
+        return Value.value();
     }
 
   private:
-    std::optional<T> m_value = std::nullopt;
+    std::optional<T> Value = std::nullopt;
 };
 } // namespace Token
 } // namespace BoxyBang
