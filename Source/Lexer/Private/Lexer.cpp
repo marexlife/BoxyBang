@@ -3,13 +3,12 @@
 #include <bits/std_thread.h>
 #include <exception>
 #include <iostream>
-#include <string>
 
 namespace BoxyBang
 {
 namespace Lexer
 {
-Token::CTokenStream Lexer::Run() noexcept
+Token::CTokenStream CLexer::Run()
 {
     while (true)
     {
