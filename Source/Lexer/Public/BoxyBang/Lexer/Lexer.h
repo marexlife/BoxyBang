@@ -8,10 +8,10 @@ namespace BoxyBang
 {
 namespace Lexer
 {
-class [[nodiscard]] Lexer final
+class [[nodiscard]] CLexer final
 {
   public:
-    explicit Lexer(std::string&& sourceText) noexcept
+    explicit CLexer(std::string&& sourceText) noexcept
         : SourceText(std::move(sourceText))
     {
     }

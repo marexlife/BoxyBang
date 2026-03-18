@@ -9,10 +9,11 @@ namespace App
 {
 void App::Run()
 {
-    std::string sourceText("");
+    std::string SourceText("");
 
-    const auto result =
-        Lexer::Lexer(std::move(sourceText)).Run();
+    const auto Result =
+        BoxyBang::Lexer::CLexer(std::move(SourceText))
+            .Run();
 }
 
 } // namespace App
