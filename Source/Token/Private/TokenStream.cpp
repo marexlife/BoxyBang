@@ -1,9 +1,15 @@
-#include <BoxyBang/Token/TokenFactorySingleton.h>
-#include <BoxyBang/Token/TokenStream.h>
+#include <boxy_bang/token/TokenFactorySingleton.h>
+#include <boxy_bang/token/TokenStream.h>
 
-void BoxyBang::Token::CTokenStream::CreateAndPush(
-    std::string_view name)
+namespace boxy_bang
 {
-    Tokens.emplace_back(
-        CTokenFactorySingleton::NewToken(name));
+namespace token
+{
+void TokenStream::CreateAndPush(std::string_view name)
+{
+    tokens_.emplace_back(
+        TokenFactorySingleton::NewToken(name));
 }
+
+} // namespace token
+} // namespace boxy_bang

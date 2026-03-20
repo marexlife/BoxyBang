@@ -1,39 +1,38 @@
-#include <BoxyBang/Lexer/Lexer.h>
-#include <BoxyBang/Token/TokenStream.h>
 #include <bits/std_thread.h>
+#include <boxy_bang/lexer/Lexer.h>
+#include <boxy_bang/token/TokenStream.h>
 
-namespace BoxyBang
+namespace boxy_bang
 {
-namespace Lexer
+namespace lexer
 {
-Token::CTokenStream CLexer::Run()
+token::TokenStream Lexer::Run()
 {
-    Token::CTokenStream tokenStream;
+    token::TokenStream token_stream;
 
-    for (const auto currentChar : SourceText)
+    for (const auto currentChar : source_text_)
     {
         switch (currentChar)
         {
         case ' ':
-            this->Flush(tokenStream);
+            this->Flush(token_stream);
             break;
         default:
-            LastWord.push_back(currentChar);
+            last_word_.push_back(currentChar);
             break;
         }
     }
 
-    this->Flush(tokenStream);
+    this->Flush(token_stream);
 
-    return tokenStream;
+    return token_stream;
 }
 
-void CLexer::Flush(
-    BoxyBang::Token::CTokenStream& TokenStream)
+void Lexer::Flush(token::TokenStream& TokenStream)
 {
-    TokenStream.CreateAndPush(LastWord);
-    LastWord.clear();
+    TokenStream.CreateAndPush(last_word_);
+    last_word_.clear();
 }
 
-} // namespace Lexer
-} // namespace BoxyBang
+} // namespace lexer
+} // namespace boxy_bang

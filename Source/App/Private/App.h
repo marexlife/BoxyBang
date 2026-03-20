@@ -1,15 +1,15 @@
 #pragma once
 
-namespace BoxyBang
+namespace boxy_bang
 {
-namespace App
+namespace app
 {
-class [[nodiscard]] CApp final
+class [[nodiscard]] App final
 {
   public:
-    CApp() = default;
+    App() = default;
 
     void Run();
 };
-} // namespace App
-} // namespace BoxyBang
+} // namespace app
+} // namespace boxy_bang

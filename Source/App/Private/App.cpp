@@ -1,20 +1,19 @@
 #include "App.h"
-#include <BoxyBang/Lexer/Lexer.h>
-#include <string>
+#include <boxy_bang/lexer/Lexer.h>
+#include <string_view>
 #include <utility>
 
-namespace BoxyBang
+namespace boxy_bang
 {
-namespace App
+namespace app
 {
-void CApp::Run()
+void App::Run()
 {
-    std::string SourceText("");
+    constexpr std::string_view kSourceText("");
 
-    const auto Result =
-        BoxyBang::Lexer::CLexer(std::move(SourceText))
-            .Run();
+    const auto result =
+        lexer::Lexer(std::move(kSourceText)).Run();
 }
 
-} // namespace App
-} // namespace BoxyBang
+} // namespace app
+} // namespace boxy_bang

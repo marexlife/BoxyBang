@@ -1,19 +1,18 @@
-#include <BoxyBang/Token/IdentifierToken.h>
-#include <BoxyBang/Token/Token.h>
-#include <BoxyBang/Token/TokenFactorySingleton.h>
+#include <boxy_bang/token/IdentifierToken.h>
+#include <boxy_bang/token/Token.h>
+#include <boxy_bang/token/TokenFactorySingleton.h>
 #include <memory>
 #include <string>
 
-namespace BoxyBang
+namespace boxy_bang
 {
-namespace Token
+namespace token
 {
-std::unique_ptr<BoxyBang::Token::CToken> Token::
-    CTokenFactorySingleton::NewToken(
-        const std::string_view Name)
+std::unique_ptr<Token> TokenFactorySingleton::NewToken(
+    const std::string_view Name)
 {
-    return std::make_unique<Token::CIdentifierToken>(
+    return std::make_unique<IdentifierToken>(
         std::string(Name));
 }
-} // namespace Token
-} // namespace BoxyBang
+} // namespace token
+} // namespace boxy_bang

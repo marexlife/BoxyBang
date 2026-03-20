@@ -1,18 +1,16 @@
 #pragma once
-        
-namespace BoxyBang
-{
-namespace Utils
-{
-class Utils 
-{
-  public:
-    explicit Utils() = default;
-    Utils& operator=(const Utils&) = default;
-    Utils& operator=(Utils&&) = default;
-    Utils(const Utils&) = default;
-    Utils(Utils&&) = default;
-    virtual ~Utils() = default;
+
+namespace boxy_bang {
+namespace utils {
+class Utils final {
+ public:
+  explicit Utils() = default;
+  ~Utils() = default;
+
+  Utils& operator=(const Utils&) = delete;
+  Utils& operator=(Utils&&) = delete;
+  Utils(const Utils&) = delete;
+  Utils(Utils&&) = delete;
 };
-} // namespace Utils
-} // namespace BoxyBang
+}  // namespace utils
+}  // namespace boxy_bang
