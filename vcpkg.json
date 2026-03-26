@@ -1,4 +1,8 @@
 {
     "name": "BoxyBang",
-    "dependencies": []
+    "dependencies": [
+        "spdlog",
+        "catch2",
+        "abseil"
+    ]
 }
